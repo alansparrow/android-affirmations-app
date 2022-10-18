@@ -45,7 +45,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Preview
 @Composable
 fun AffirmationApp() {
     AffirmationsTheme {
@@ -71,4 +70,10 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
             )
         }
     }
+}
+
+@Preview
+@Composable
+private fun AffirmationCardPreview() {
+    AffirmationCard(Affirmation(R.string.affirmation10, R.drawable.image10))
 }
