@@ -14,11 +14,26 @@
  * limitations under the License.
  */
 package com.example.affirmations
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.Scaffold
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import com.example.affirmations.model.Affirmation
 import com.example.affirmations.ui.theme.AffirmationsTheme
 
 class MainActivity : ComponentActivity() {
@@ -30,8 +45,30 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Preview
 @Composable
 fun AffirmationApp() {
     AffirmationsTheme {
+    }
+}
+
+@Composable
+fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
+    Card(modifier = modifier.padding(8.dp), elevation = 4.dp) {
+        Column() {
+            Image(
+                painter = painterResource(affirmation.imageResourceId),
+                contentDescription = stringResource(affirmation.stringResourceId),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(194.dp),
+                contentScale = ContentScale.Crop
+            )
+            Text(
+                text = stringResource(affirmation.stringResourceId),
+                modifier = Modifier.padding(16.dp),
+                style = MaterialTheme.typography.h6
+            )
+        }
     }
 }
