@@ -1,7 +1,7 @@
 Affirmations App - Starter Code
 ================================
 
-[Starter code for the Android Basics in Compose: Affirmations app.](https://github.com/alansparrow/android-affirmations-app/blob/main/screenshot.png)
+![Starter code for the Android Basics in Compose: Affirmations app.](https://github.com/alansparrow/android-affirmations-app/blob/main/screenshot.png)
 
 Pre-requisites
 --------------
